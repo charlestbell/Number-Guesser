@@ -27,7 +27,6 @@ const GameScreen = (props) => {
 
   useEffect(() => {
     if (currentGuess === userChoice) {
-      console.log('game should be over');
       onGameOver(rounds);
     }
   }, [currentGuess, onGameOver, userChoice]);
@@ -56,9 +55,6 @@ const GameScreen = (props) => {
     setRounds((currentRounds) => currentRounds + 1);
   };
 
-  //   console.log('current rounds ', rounds);
-  console.log('current guess ', currentGuess);
-
   return (
     <View styles={styles.screen}>
       <Text>Opponent's Guess</Text>
@@ -79,8 +75,6 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
     alignItems: 'center',
-    height: '100%',
-    maxWidth: 20,
   },
   buttonContainer: {
     flexDirection: 'row',

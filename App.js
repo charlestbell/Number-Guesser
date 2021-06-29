@@ -9,9 +9,13 @@ export default App = () => {
   const [userNumber, setUserNumber] = useState();
   const [guessRounds, setGuessRounds] = useState(0);
 
+  const newGameHandler = () => {
+    setGuessRounds(0);
+    setUserNumber(null);
+  };
+
   const gameOverHandler = (numOfRounds) => {
     setGuessRounds(numOfRounds);
-    console.log('gameOverHandler fired');
   };
 
   const startGameHandler = (selectedNumber) => {
@@ -26,10 +30,15 @@ export default App = () => {
       <GameScreen userChoice={userNumber} onGameOver={gameOverHandler} />
     );
   } else if (guessRounds > 0) {
-    content = <GameOverScreen />;
+    content = (
+      <GameOverScreen
+        roundsNumber={guessRounds}
+        userNumber={userNumber}
+        onRestart={newGameHandler}
+      />
+    );
   }
 
-  console.log('userChoice ', userNumber);
   return (
     <View style={styles.screen}>
       <Header title='Guess a number' />
@@ -38,4 +47,9 @@ export default App = () => {
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+    backgroundColor: 'orange',
+  },
+});
