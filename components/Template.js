@@ -2,8 +2,12 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import colors from '../constants/colors';
 
-const StartGameScreen = (props) => {};
+const MyComponent = props => {
+    return()
+};
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    
+});
 
-export default StartGameScreen;
+export default MyComponent;
