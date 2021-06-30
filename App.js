@@ -47,13 +47,16 @@ export default App = () => {
   };
 
   let content = <StartGameScreen onStartGame={startGameHandler} />;
-  // content = content = (
-  //   <GameOverScreen
-  //     roundsNumber={guessRounds}
-  //     userNumber={userNumber}
-  //     onRestart={newGameHandler}
-  //   />
-  // );
+
+  //This is here only for development
+  content = content = (
+    <GameOverScreen
+      roundsNumber={1}
+      userNumber={1}
+      onRestart={newGameHandler}
+    />
+  );
+  //End of development only code
 
   if (userNumber && guessRounds <= 0) {
     content = (
