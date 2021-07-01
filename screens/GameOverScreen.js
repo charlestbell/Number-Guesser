@@ -14,7 +14,6 @@ const GameOverScreen = (props) => {
         <Image
           style={styles.image}
           resizeMode='cover'
-          // source={require('../assets/success.png')}
           source={{
             uri: 'https://explorersweb.com/wp-content/uploads/2021/05/Summit-Everest-MingmaG.jpg',
           }}
@@ -28,7 +27,7 @@ const GameOverScreen = (props) => {
           <Text style={styles.highlight}>{props.userNumber}</Text>
         </BodyText>
       </View>
-      <MainButton>NEW GAME</MainButton>
+      <MainButton onPress={props.onRestart}>NEW GAME</MainButton>
     </View>
   );
 };
