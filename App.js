@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Platform } from 'react-native';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
 
@@ -7,6 +7,7 @@ import Header from './components/Header';
 import StartGameScreen from './screens/StartGameScreen';
 import GameScreen from './screens/GameScreen';
 import GameOverScreen from './screens/GameOverScreen';
+import colors from './constants/colors';
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -73,6 +74,6 @@ export default App = () => {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: 'orange',
+    backgroundColor: Platform.OS == 'android' ? colors.background : 'white',
   },
 });
